@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "5672c133-5647-4ebe-8cd1-eb099f0daa42"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "web-app": {
+    "portofolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/web-app",
+            "outputPath": "dist/portofolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +31,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/style.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,18 +73,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "web-app:build"
+            "browserTarget": "portofolio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "web-app:build:production"
+              "browserTarget": "portofolio:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "web-app:build"
+            "browserTarget": "portofolio:build"
           }
         },
         "test": {
@@ -113,16 +121,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "web-app:serve"
+            "devServerTarget": "portofolio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "web-app:serve:production"
+              "devServerTarget": "portofolio:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "web-app"
+  "defaultProject": "portofolio"
 }

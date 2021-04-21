@@ -1,0 +1,45 @@
+<!-- ======= grey bar ======= -->
+<section id="botbar" class="botbar">
+  <div class="container"></div>
+</section>
+<!-- cv sections start -->
+
+<section class="about contact">
+  <!-- Section 1 -->
+  <div class="container info-box" style="height: 500px">
+    <section id="topbar">
+      <div class="container">
+        <div class="container">
+          <nav id="navbar" class="navbar justify-content-center">
+            <ul>
+              <li>
+                <a class="active" [routerLink]="['exppro']" routerLinkActive="router-link-active">
+                  Expérience professionnelle
+                </a>
+              </li>
+              <li>
+                <a class="active" [routerLink]="['formapro']" routerLinkActive="router-link-active">Formation
+                  professionnelle</a>
+              </li>
+              <li>
+                <a class="active" [routerLink]="['profil']" routerLinkActive="router-link-active">Profil</a>
+              </li>
+              <li>
+                <a class="active" [routerLink]="['spec']" routerLinkActive="router-link-active">Spécialités</a>
+              </li>
+              <li>
+                <a class="active" [routerLink]="['coord']" routerLinkActive="router-link-active">Coordonnées</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <div class="row-md-12 pt-3">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- End  Section -->
+  </div>
+</section>
